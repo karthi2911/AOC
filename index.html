@@ -1,0 +1,152 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="x-ua-compatible" content="ie=edge" />
+<title>AOC</title>
+<meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+<link rel="stylesheet/less" type="text/css" href="less/styles.less" />
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet" />
+
+<link rel="stylesheet" href="css/owl.carousel.min.css" />
+<link rel="stylesheet" href="css/owl.theme.default.min.css" />
+
+<script>
+  less = {
+    env: "development"
+  };
+</script>
+<script src="js/less.js" type="text/javascript" data-env="development"></script>
+<script>less.watch();</script>
+</head>
+
+<body>
+
+<header>
+    <a href="#" class="logoPatch"></a>
+    <div class="humMenu">
+        <label>Offers</label>
+        <a href="#" id="menuNav"><span></span></a>
+    </div>
+    <nav>
+        <div class="mainMenu">
+            <a href="#">About</a>
+            <a href="#">Products</a>
+            <a href="#">Store Locator</a>
+            <a href="#">Contact Us</a>
+        </div>
+    </nav>
+</header>
+<div class="mobSection">
+    <div class="mobSlides">
+        <ul>
+            <li class="slide1">
+                <div>
+                    <i></i>
+                    <h1>Astonishing features requires worry-free security</h1>
+                    <h3>1 Year Free Mobile Security</h3>
+                    <figure></figure>
+                </div>
+            </li>
+            <li class="slide2">
+                <div>
+                    <i></i>
+                    <h1>Be hooked!</h1>
+                    <h3>2000+ Movies from Bollywood</h3>
+                    <figure></figure>
+                </div>
+            </li>
+            <li class="slide3">
+                <div>
+                    <i></i>
+                    <h1>The best things in life are free</h1>
+                    <h3>Free Mobile Pouch</h3>
+                    <figure></figure>
+                </div>
+            </li>
+            <li class="slide4">
+                <div>
+                    <i></i>
+                    <h1>The thump never ends here</h1>
+                    <h3>1000's of Songs</h3>
+                    <figure></figure>
+                </div>
+            </li>
+            <li class="slide5">
+                <div>
+                    <i></i>
+                    <h1>Being globally you</h1>
+                    <h3>21 indian &amp; foreign languages</h3>
+                    <figure></figure>
+                </div>
+            </li>
+            <li class="slide6">
+                <div>
+                    <i></i>
+                    <h1>For the wise</h1>
+                    <h3>1000 pts discount on subscription</h3>
+                    <figure></figure>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<script src="js/jquery.min.js" type="text/javascript"></script>
+<script src="js/owl.carousel.js" type="text/javascript"></script>
+
+<script>
+
+$( document ).ready(function() {
+
+$('nav').hide();
+$('#menuNav').removeClass('menuOpen');
+
+$('#menuNav').click(function() {
+    $(this).toggleClass('menuOpen');
+    $('nav').toggle();
+    $('nav').toggleClass('mainMenuOpen');
+    return false;
+});
+
+if($(window).width() < 1000){
+	$('.mobSlides ul').addClass('owl-carousel owl-theme');	
+}
+else {
+    $('.mobSlides ul').trigger('destroy.owl.carousel');
+	$('.mobSlides ul').removeClass('owl-carousel owl-theme');
+}
+$('.mobSlides .owl-carousel').owlCarousel({
+    loop:true,
+    nav:true,
+    responsive:{
+        0:{
+            items:1
+        }
+    }
+});
+
+$(window).resize(function() {
+    if($(window).width() < 1000){
+        $('.mobSlides ul').addClass('owl-carousel owl-theme');	
+    }
+    else {
+        $('.mobSlides ul').trigger('destroy.owl.carousel');
+        $('.mobSlides ul').removeClass('owl-carousel owl-theme');
+    }
+    $('.mobSlides .owl-carousel').owlCarousel({
+        loop:true,
+        nav:true,
+        responsive:{
+            0:{
+                items:1
+            }
+        }
+    });
+});
+
+});
+</script>
+
+</body>
+</html>
